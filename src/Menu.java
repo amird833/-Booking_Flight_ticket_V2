@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
 public class Menu {
-    private int chose;
 
     public int welcomeMenu(Scanner input)
     {
-        chose=0;
+        int chose;
         System.out.println("1- Sign in ");
         System.out.println("2- Sign up");
         System.out.print(">>");
@@ -13,7 +12,7 @@ public class Menu {
         while (chose > 2 || chose <1)
         {
             System.out.println("Try again!");
-            System.out.printf(">>");
+            System.out.print(">>");
             chose = input.nextInt();
         }
         return chose;
