@@ -6,18 +6,19 @@ public class SignIn {
     {
         String username;
         String password;
+        System.out.println("Username : ");
         username = input.next();
         if (adminSignInPassword(username))
         {
             password = input.next();
-            if (adminSignInPassword(password))
+            while (!adminSignInPassword(password))
             {
-                System.out.println("Welcome admin");
+                System.out.println("Wrong password!");
+                System.out.println("Try again");
+                System.out.printf(">>");
+                password = input.next();
             }
-            else
-            {
-                System.out.println("password not correct");
-            }
+            System.out.println("Welcome admin :)");
         }
         else
         {
