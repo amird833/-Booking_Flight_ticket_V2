@@ -12,7 +12,7 @@ public class SignIn {
         {
             System.out.println("Cant find this user!");
             System.out.println("Try again");
-            System.out.printf(">>");
+            System.out.print(">>");
             username = input.next();
         }
         System.out.print("Password : ");
@@ -61,10 +61,7 @@ public class SignIn {
     }
     private boolean checkUserPassword(User user,String passWord)
     {
-        if (user.getPassword() != null && user.getPassword().equals(passWord))
-            return true;
-
-        return false;
+        return user.getPassword() != null && user.getPassword().equals(passWord);
     }
     private int findIndexOfUser(User[] users,String username)
     {
