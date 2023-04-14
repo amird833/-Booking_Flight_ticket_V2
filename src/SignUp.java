@@ -4,7 +4,7 @@ public class SignUp {
     public void signingUpUser(Scanner input, User[] users)
     {
         String username;
-
+        System.out.println("Username : ");
         username = input.next();
         int index;
         while (checkUsername(users,username))
