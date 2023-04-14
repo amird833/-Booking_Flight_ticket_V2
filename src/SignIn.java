@@ -51,6 +51,8 @@ public class SignIn {
     }
     private boolean checkUserUsername(User[] users,String userName)
     {
+        if (users[0] == null)
+            return true;
         for (User user : users) {
             if (user.getUsername() != null && user.getUsername().equals(userName))
                 return true;
