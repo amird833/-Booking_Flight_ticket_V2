@@ -6,10 +6,11 @@ public class SignIn {
     {
         String username;
         String password;
-        System.out.println("Username : ");
+        System.out.printf("Username : ");
         username = input.next();
         if (adminSignInPassword(username))
         {
+            System.out.printf("Password : ");
             password = input.next();
             while (!adminSignInPassword(password))
             {
