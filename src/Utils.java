@@ -4,6 +4,7 @@ public class Utils {
     Menu menu = new Menu();
     Scanner input = new Scanner(System.in);
     SignIn signin = new SignIn();
+    User[] users = new User[100];
     public void start()
     {
         while (true)
