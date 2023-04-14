@@ -10,7 +10,7 @@ public class Utils {
         while (true)
         {
             switch (menu.welcomeMenu(input)) {
-                case 1 -> signin.signInGet(input);
+                case 1 -> signin.signInGet(input,users);
                 case 2 -> System.out.println("2");
             }
         }
