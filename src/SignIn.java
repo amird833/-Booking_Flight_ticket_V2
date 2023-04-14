@@ -8,7 +8,7 @@ public class SignIn {
         int index;
         System.out.print("Username : ");
         username = input.next();
-        while (!checkAdminUsername(username) || !checkUserUsername(users,username) )
+        while (!checkUserUsername(users,username)  )
         {
             System.out.println("Cant find this user!");
             System.out.println("Try again");
@@ -39,6 +39,7 @@ public class SignIn {
                 System.out.print(">>");
                 password = input.next();
             }
+            System.out.printf("Welcome %s",users[index].getUsername());
         }
     }
     private boolean checkAdminUsername(String userName )
@@ -52,6 +53,8 @@ public class SignIn {
     private boolean checkUserUsername(User[] users,String userName)
     {
         if (users[0] == null)
+            return true;
+        else if (userName.equals("admin")||userName.equals("ADMIN")||userName.equals("Admin"))
             return true;
         for (User user : users) {
             if (user.getUsername() != null && user.getUsername().equals(userName))

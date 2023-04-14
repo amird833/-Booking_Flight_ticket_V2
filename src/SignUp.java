@@ -21,11 +21,14 @@ public class SignUp {
     }
     private boolean checkUsername(User[] users,String username)
     {
+        if (username.equals("Admin") || username.equals("ADMIN")||username.equals("admin"))
+            return true;
         for (User user : users) {
             if (user != null && user.getUsername().equals(username))
                 return true;
 
         }
+
         return false;
     }
     private int findIndex(User[] users)
