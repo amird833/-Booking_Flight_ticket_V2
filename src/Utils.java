@@ -12,7 +12,7 @@ public class Utils {
         while (true)
         {
             switch (sign.welcomeMenu(input)) {
-                case 1 -> sign.signInGet(input,users,admin);
+                case 1 -> sign.signInGet(input,users,admin,flights);
                 case 2 -> sign.signUpUser(input,users);
             }
         }

@@ -56,7 +56,7 @@ public class Sign {
         }
         return 0;
     }
-    public void signInGet(Scanner input , User[] users,Admin admin)
+    public void signInGet(Scanner input , User[] users,Admin admin,Flight[] flights)
     {
         String username;
         String password;
@@ -83,7 +83,7 @@ public class Sign {
                 password = input.next();
             }
             System.out.println("Welcome admin :)");
-            admin.adminAction(input);
+            admin.adminAction(input,flights);
         }
         else
         {
