@@ -89,4 +89,14 @@ public class Ticket {
         }
         return false;
     }
+    public int findNullTicket(Ticket[] tickets)
+    {
+        for (int i = 0; i < tickets.length; i++) {
+            if (tickets[i]==null) {
+                tickets[i]=new Ticket();
+                return i;
+            }
+        }
+        return 0;
+    }
 }
