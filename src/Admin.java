@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Admin {
-    public  int adminMenu(Scanner input)
+    private int adminMenu(Scanner input)
     {
         int chose;
         System.out.println("1- Add");
@@ -19,4 +19,27 @@ public class Admin {
         }
         return chose;
     }
+    public void adminAction(Scanner input)
+    {
+        int exitFlag = 0;
+        while (exitFlag == 0)
+        {
+            switch (adminMenu(input))
+            {
+                case 1 :
+                    break;
+                case 2 :
+                    break;
+                case 3 :
+                    break;
+                case 4:
+                    break;
+                case 0:
+                    exitFlag = 1;
+                    break;
+            }
+        }
+
+    }
+
 }

@@ -83,7 +83,7 @@ public class Sign {
                 password = input.next();
             }
             System.out.println("Welcome admin :)");
-
+            admin.adminAction(input);
         }
         else
         {
