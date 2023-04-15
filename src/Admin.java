@@ -19,7 +19,7 @@ public class Admin {
         }
         return chose;
     }
-    public void adminAction(Scanner input)
+    public void adminAction(Scanner input,Flight[] flights)
     {
         int exitFlag = 0;
         while (exitFlag == 0)

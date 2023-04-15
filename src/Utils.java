@@ -6,6 +6,7 @@ public class Utils {
     Sign sign = new Sign();
     User[] users = new User[SIZE];
     Admin admin = new Admin();
+    Flight[] flights = new Flight[SIZE];
     public void start()
     {
         while (true)
