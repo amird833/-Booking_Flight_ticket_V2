@@ -9,6 +9,7 @@ public class Utils {
     Flight[] flights = new Flight[SIZE];
     public void start()
     {
+        admin.addDefultFlight(flights);
         while (true)
         {
             switch (sign.welcomeMenu(input)) {

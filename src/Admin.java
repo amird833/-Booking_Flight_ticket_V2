@@ -193,4 +193,33 @@ public class Admin {
                 System.out.printf("\t%6s       |%6s       |%6s       |%6s       |%6s       %|10d       |%3d\n", flight.getFlightId(), flight.getOrigin(), flight.getDestination(), flight.getDate(), flight.getTime(), flight.getPrice(), flight.getSeats());
             }
     }
+    public void addDefultFlight(Flight[] flights)
+    {
+        flights[0] = new Flight();
+        flights[1] = new Flight();
+        flights[2] = new Flight();
+        flights[0].setFlightId("WX-12");
+        flights[0].setOrigin("Yazd");
+        flights[0].setDestination("Tehran");
+        flights[0].setDate("1401-12-10");
+        flights[0].setTime("12:30");
+        flights[0].setPrice(700000);
+        flights[0].setSeats(51);
+
+        flights[1].setFlightId("WZ-15");
+        flights[1].setOrigin("Mashhad");
+        flights[1].setDestination("Ahvaz");
+        flights[1].setDate("1401-12-11");
+        flights[1].setTime("08:00");
+        flights[1].setPrice(900000);
+        flights[1].setSeats(245);
+
+        flights[2].setFlightId("BG-22");
+        flights[2].setOrigin("Shiraz");
+        flights[2].setDestination("Tabriz");
+        flights[2].setDate("1401-12-12");
+        flights[2].setTime("22:30");
+        flights[2].setPrice(1100000);
+        flights[2].setSeats(12);
+    }
 }

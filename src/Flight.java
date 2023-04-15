@@ -62,4 +62,5 @@ public class Flight {
     public void setSeats(int seats) {
         this.seats = seats;
     }
+
 }
