@@ -27,7 +27,7 @@ public class Admin {
             switch (adminMenu(input))
             {
                 case 1 ://add
-
+                    addFlight(input,flights);
                     break;
                 case 2 :
                     break;
