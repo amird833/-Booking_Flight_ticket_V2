@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Ticket {
     private String flightId;
     private String origin;
@@ -6,6 +8,15 @@ public class Ticket {
     private String time;
     private int price;
     private String ticketId;
+    private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getFlightId() {
         return flightId;
@@ -59,7 +70,23 @@ public class Ticket {
         return ticketId;
     }
 
-    public void setTicketId(String ticketId) {
-        this.ticketId = ticketId;
+    public void setTicketId(Random random,Ticket[] tickets) {
+        String randNum;
+        randNum =Integer.toString(random.nextInt(100_000,1_000_000)) ;
+        while (findTicketId(tickets,randNum))
+        {
+            randNum =Integer.toString(random.nextInt(100_000,1_000_000)) ;
+        }
+        this.ticketId = randNum;
+    }
+    private boolean findTicketId(Ticket[] tickets , String randNum )
+    {
+        for (int i = 0; i < tickets.length; i++) {
+            if (tickets[i]!= null && tickets[i].getTicketId()!= null && tickets[i].getTicketId().equals(randNum) )
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

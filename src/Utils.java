@@ -8,6 +8,7 @@ public class Utils {
     Admin admin = new Admin();
     Other other = new Other();
     Flight[] flights = new Flight[SIZE];
+    Ticket[] tickets = new Ticket[SIZE*10];
     public void start()
     {
         admin.addDefultFlight(flights);
