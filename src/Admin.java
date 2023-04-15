@@ -36,6 +36,7 @@ public class Admin {
                     removeFlight(input,flights);
                     break;
                 case 4:
+                    printFlight(flights);
                     break;
                 case 0:
                     exitFlag = 1;
@@ -195,5 +196,12 @@ public class Admin {
         System.out.printf("Old Seats : %d",flight.getSeats());
         System.out.print("New Seats : ");
         flight.setSeats(input.nextInt());
+    }
+    private void printFlight(Flight[] flights)
+    {
+        for (int i = 0; i < flights.length; i++)
+            if (flights[i] != null && flights[i].getFlightId() != null) {
+                System.out.printf("\t%6s       |%6s       |%6s       |%6s       |%6s       %|10d       |%3d\n", flights[i].getFlightId(), flights[i].getOrigin(), flights[i].getDestination(), flights[i].getDate(), flights[i].getTime(), flights[i].getPrice(), flights[i].getSeats());
+            }
     }
 }
