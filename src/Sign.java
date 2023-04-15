@@ -68,6 +68,7 @@ public class Sign {
                 password = input.next();
             }
             System.out.println("Welcome admin :)");
+
         }
         else
         {
