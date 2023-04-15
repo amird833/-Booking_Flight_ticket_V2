@@ -12,6 +12,7 @@ public class Other {
                     changeUserPassword(user,input);
                     break;
                 case 2:
+                    filterFlight(flights,input);
                     break;
                 case 3:
                     break;
