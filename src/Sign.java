@@ -1,6 +1,21 @@
 import java.util.Scanner;
 
 public class Sign {
+    public  int welcomeMenu(Scanner input)
+    {
+        int chose;
+        System.out.println("1- Sign in ");
+        System.out.println("2- Sign up");
+        System.out.print(">>");
+        chose = input.nextInt();
+        while (chose > 2 || chose <1)
+        {
+            System.out.println("Try again!");
+            System.out.print(">>");
+            chose = input.nextInt();
+        }
+        return chose;
+    }
     public void signUpUser(Scanner input, User[] users)
     {
         String username;
@@ -41,7 +56,7 @@ public class Sign {
         }
         return 0;
     }
-    public void signInGet(Scanner input , User[] users)
+    public void signInGet(Scanner input , User[] users,Admin admin)
     {
         String username;
         String password;
