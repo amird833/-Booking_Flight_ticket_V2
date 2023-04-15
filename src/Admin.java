@@ -50,7 +50,7 @@ public class Admin {
         String flightId;
         System.out.print("FlightId : ");
         flightId = input.next();
-        while (findExistFlighId(flights,flightId))
+        while (findExistFlightId(flights,flightId))
         {
             System.out.println("This flightId already EXIST");
             System.out.println("Try again");
@@ -86,7 +86,7 @@ public class Admin {
         }
         return 0;
     }
-    private boolean findExistFlighId(Flight[] flights,String flightId)
+    private boolean findExistFlightId(Flight[] flights,String flightId)
     {
         for (Flight flight : flights) {
             if (flight != null && flight.getFlightId() != null && flight.getFlightId().equals(flightId))
@@ -99,7 +99,7 @@ public class Admin {
     {
         System.out.print("Enter flightId : ");
         String flightId = input.next();
-        while (!findExistFlighId(flights,flightId))
+        while (!findExistFlightId(flights,flightId))
         {
             System.out.println("This flightId is INCORRECT!");
             System.out.println("Try again ");
@@ -123,34 +123,21 @@ public class Admin {
     {
         System.out.println("Enter flightId : ");
         String flightId = input.next();
-        while (!findExistFlighId(flights,flightId))
+        while (!findExistFlightId(flights,flightId))
         {
             System.out.println("This flightId is INCORRECT!");
             System.out.println("Try again ");
-            System.out.printf("Enter flightId : ");
+            System.out.print("Enter flightId : ");
             flightId = input.next();
         }
         int index = findFlightIdIndex(flights,flightId);
-        switch (adminUpdateMenu(input))
-        {
-            case 1:
-                updateOrigin(flights[index],input);
-                break;
-            case 2:
-                updateDestination(flights[index],input);
-                break;
-            case 3:
-                updateDate(flights[index],input);
-                break;
-            case 4:
-                updateTime(flights[index],input);
-                break;
-            case 5:
-                updatePrice(flights[index],input );
-                break;
-            case 6 :
-                updateSeats(flights[index],input );
-                break;
+        switch (adminUpdateMenu(input)) {
+            case 1 -> updateOrigin(flights[index], input);
+            case 2 -> updateDestination(flights[index], input);
+            case 3 -> updateDate(flights[index], input);
+            case 4 -> updateTime(flights[index], input);
+            case 5 -> updatePrice(flights[index], input);
+            case 6 -> updateSeats(flights[index], input);
         }
     }
     private int adminUpdateMenu(Scanner input)
@@ -176,37 +163,37 @@ public class Admin {
     private void updateOrigin(Flight flight ,Scanner input)
     {
         System.out.printf("Old Origin : %s",flight.getOrigin());
-        System.out.printf("New Origin : ");
+        System.out.print("New Origin : ");
         flight.setOrigin(input.next());
     }
     private void updateDestination(Flight flight ,Scanner input)
     {
         System.out.printf("Old Destination : %s",flight.getDestination());
-        System.out.printf("New Destination : ");
+        System.out.print("New Destination : ");
         flight.setDestination(input.next());
     }
     private void updateDate(Flight flight ,Scanner input)
     {
         System.out.printf("Old Date : %s",flight.getDate());
-        System.out.printf("New Date : ");
+        System.out.print("New Date : ");
         flight.setDate(input.next());
     }
     private void updateTime(Flight flight ,Scanner input)
     {
         System.out.printf("Old Time : %s",flight.getTime());
-        System.out.printf("New Time : ");
+        System.out.print("New Time : ");
         flight.setTime(input.next());
     }
     private void updatePrice(Flight flight ,Scanner input)
     {
         System.out.printf("Old Price : %d",flight.getPrice());
-        System.out.printf("New Price : ");
+        System.out.print("New Price : ");
         flight.setPrice(input.nextInt());
     }
     private void updateSeats(Flight flight ,Scanner input)
     {
         System.out.printf("Old Seats : %d",flight.getSeats());
-        System.out.printf("New Seats : ");
+        System.out.print("New Seats : ");
         flight.setSeats(input.nextInt());
     }
 }
