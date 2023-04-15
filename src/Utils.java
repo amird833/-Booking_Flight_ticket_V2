@@ -6,6 +6,7 @@ public class Utils {
     Sign sign = new Sign();
     User[] users = new User[SIZE];
     Admin admin = new Admin();
+    Other other = new Other();
     Flight[] flights = new Flight[SIZE];
     public void start()
     {
@@ -13,7 +14,7 @@ public class Utils {
         while (true)
         {
             switch (sign.welcomeMenu(input)) {
-                case 1 -> sign.signInGet(input,users,admin,flights);
+                case 1 -> sign.signInGet(input,users,admin,flights,other);
                 case 2 -> sign.signUpUser(input,users);
             }
         }
