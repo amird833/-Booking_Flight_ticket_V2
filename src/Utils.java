@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
 public class Utils {
+    private static final int SIZE = 100;
     Menu menu = new Menu();
     Scanner input = new Scanner(System.in);
     Sign sign = new Sign();
-    User[] users = new User[100];
+    User[] users = new User[SIZE];
     public void start()
     {
         while (true)
