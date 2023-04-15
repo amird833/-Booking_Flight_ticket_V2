@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public int welcomeMenu(Scanner input)
+    public static int welcomeMenu(Scanner input)
     {
         int chose;
         System.out.println("1- Sign in ");
