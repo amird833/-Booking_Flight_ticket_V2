@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Utils {
@@ -9,13 +10,14 @@ public class Utils {
     Other other = new Other();
     Flight[] flights = new Flight[SIZE];
     Ticket[] tickets = new Ticket[SIZE*10];
+    Random random = new Random();
     public void start()
     {
         admin.addDefultFlight(flights);
         while (true)
         {
             switch (sign.welcomeMenu(input)) {
-                case 1 -> sign.signInGet(input,users,admin,flights,other);
+                case 1 -> sign.signInGet(input,users,admin,flights,other,random , tickets);
                 case 2 -> sign.signUpUser(input,users);
             }
         }

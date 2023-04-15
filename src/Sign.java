@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Sign {
@@ -56,7 +57,7 @@ public class Sign {
         }
         return 0;
     }
-    public void signInGet(Scanner input , User[] users,Admin admin,Flight[] flights , Other other)
+    public void signInGet(Scanner input , User[] users, Admin admin, Flight[] flights , Other other , Random random , Ticket[] tickets)
     {
         String username;
         String password;
@@ -96,7 +97,7 @@ public class Sign {
                 password = input.next();
             }
             System.out.printf("Welcome %s",users[index].getUsername());
-            other.otherAction(input,flights,users[index]);
+            other.otherAction(input,flights,users[index],random , tickets , admin);
         }
     }
     private boolean checkAdminUsername(String userName )

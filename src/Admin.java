@@ -76,7 +76,7 @@ public class Admin {
         }
         return 0;
     }
-    private boolean findExistFlightId(Flight[] flights,String flightId)
+    public boolean findExistFlightId(Flight[] flights,String flightId)
     {
         for (Flight flight : flights) {
             if (flight != null && flight.getFlightId() != null && flight.getFlightId().equals(flightId))
@@ -100,7 +100,7 @@ public class Admin {
         flights[index]=null;
         System.out.println("Remove is successfully :)");
     }
-    private int findFlightIdIndex(Flight[] flights , String flightId)
+    public int findFlightIdIndex(Flight[] flights , String flightId)
     {
         for (int i = 0; i < flights.length; i++)
         {
