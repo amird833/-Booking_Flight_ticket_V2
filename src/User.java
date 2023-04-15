@@ -2,6 +2,15 @@ public class User {
     private String username;
     private String password;
     private int vault;
+    private Ticket[] tickets = new Ticket[10];
+
+    public Ticket[] getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(Ticket[] tickets) {
+        this.tickets = tickets;
+    }
 
     public User() {
         vault = 0;
