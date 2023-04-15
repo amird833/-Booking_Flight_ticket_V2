@@ -9,6 +9,7 @@ public class Other {
             switch (otherMenu(input))
             {
                 case 1:
+                    changeUserPassword(user,input);
                     break;
                 case 2:
                     break;
@@ -46,5 +47,12 @@ public class Other {
             chose=input.nextInt();
         }
         return chose;
+    }
+    private void changeUserPassword(User user,Scanner input)
+    {
+        System.out.printf("Old password : %s\n", user.getPassword());
+        System.out.print("New password : ");
+        user.setPassword(input.next());
+        System.out.println("Change successfully");
     }
 }
