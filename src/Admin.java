@@ -30,6 +30,7 @@ public class Admin {
                     addFlight(input,flights);
                     break;
                 case 2 :
+                    removeFlight(input,flights);
                     break;
                 case 3 :
                     break;
@@ -92,5 +93,29 @@ public class Admin {
 
         }
         return false;
+    }
+    private void removeFlight(Scanner input,Flight[] flights)
+    {
+        System.out.printf("Enter flightId : ");
+        String flightId = input.next();
+        while (!findExistFlighId(flights,flightId))
+        {
+            System.out.println("This flightId is INCORRECT!");
+            System.out.println("Try again ");
+            System.out.printf("Enter flightId : ");
+            flightId = input.next();
+        }
+        int index = findFlightIdIndex(flights,flightId);
+        flights[index]=null;
+        System.out.println("Remove is successfully :)");
+    }
+    private int findFlightIdIndex(Flight[] flights , String flightId)
+    {
+        for (int i = 0; i < flights.length; i++)
+        {
+            if (flights[i]!=null && flights[i].getFlightId() != null && flights[i].getFlightId().equals(flightId))
+                return i;
+        }
+        return 0;
     }
 }
