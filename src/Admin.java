@@ -152,37 +152,37 @@ public class Admin {
     }
     private void updateOrigin(Flight flight ,Scanner input)
     {
-        System.out.printf("Old Origin : %s",flight.getOrigin());
+        System.out.printf("Old Origin : %s \n",flight.getOrigin());
         System.out.print("New Origin : ");
         flight.setOrigin(input.next());
     }
     private void updateDestination(Flight flight ,Scanner input)
     {
-        System.out.printf("Old Destination : %s",flight.getDestination());
+        System.out.printf("Old Destination : %s \n",flight.getDestination());
         System.out.print("New Destination : ");
         flight.setDestination(input.next());
     }
     private void updateDate(Flight flight ,Scanner input)
     {
-        System.out.printf("Old Date : %s",flight.getDate());
+        System.out.printf("Old Date : %s \n",flight.getDate());
         System.out.print("New Date : ");
         flight.setDate(input.next());
     }
     private void updateTime(Flight flight ,Scanner input)
     {
-        System.out.printf("Old Time : %s",flight.getTime());
+        System.out.printf("Old Time : %s \n",flight.getTime());
         System.out.print("New Time : ");
         flight.setTime(input.next());
     }
     private void updatePrice(Flight flight ,Scanner input)
     {
-        System.out.printf("Old Price : %d",flight.getPrice());
+        System.out.printf("Old Price : %d \n",flight.getPrice());
         System.out.print("New Price : ");
         flight.setPrice(input.nextInt());
     }
     private void updateSeats(Flight flight ,Scanner input)
     {
-        System.out.printf("Old Seats : %d",flight.getSeats());
+        System.out.printf("Old Seats : %d \n",flight.getSeats());
         System.out.print("New Seats : ");
         flight.setSeats(input.nextInt());
     }
