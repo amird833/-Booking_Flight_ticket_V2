@@ -4,7 +4,7 @@ public class Sign {
     public void signUpUser(Scanner input, User[] users)
     {
         String username;
-        System.out.println("Username : ");
+        System.out.print("Username : ");
         username = input.next();
         int index;
         while (checkUsername(users,username))
@@ -16,7 +16,7 @@ public class Sign {
         }
         index = findIndex(users);
         users[index].setUsername(username);
-        System.out.println("Password : ");
+        System.out.print("Password : ");
         users[index].setPassword(input.next());
     }
     private boolean checkUsername(User[] users,String username)
