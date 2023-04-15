@@ -24,23 +24,12 @@ public class Admin {
         int exitFlag = 0;
         while (exitFlag == 0)
         {
-            switch (adminMenu(input))
-            {
-                case 1 ://add
-                    addFlight(input,flights);
-                    break;
-                case 2 :
-                    updateFlight(flights,input);
-                    break;
-                case 3 :
-                    removeFlight(input,flights);
-                    break;
-                case 4:
-                    printFlight(flights);
-                    break;
-                case 0:
-                    exitFlag = 1;
-                    break;
+            switch (adminMenu(input)) {
+                case 1 -> addFlight(input, flights);
+                case 2 -> updateFlight(flights, input);
+                case 3 -> removeFlight(input, flights);
+                case 4 -> printFlight(flights);
+                case 0 -> exitFlag = 1;
             }
         }
 
@@ -199,9 +188,9 @@ public class Admin {
     }
     private void printFlight(Flight[] flights)
     {
-        for (int i = 0; i < flights.length; i++)
-            if (flights[i] != null && flights[i].getFlightId() != null) {
-                System.out.printf("\t%6s       |%6s       |%6s       |%6s       |%6s       %|10d       |%3d\n", flights[i].getFlightId(), flights[i].getOrigin(), flights[i].getDestination(), flights[i].getDate(), flights[i].getTime(), flights[i].getPrice(), flights[i].getSeats());
+        for (Flight flight : flights)
+            if (flight != null && flight.getFlightId() != null) {
+                System.out.printf("\t%6s       |%6s       |%6s       |%6s       |%6s       %|10d       |%3d\n", flight.getFlightId(), flight.getOrigin(), flight.getDestination(), flight.getDate(), flight.getTime(), flight.getPrice(), flight.getSeats());
             }
     }
 }
