@@ -30,6 +30,7 @@ public class Admin {
                     addFlight(input,flights);
                     break;
                 case 2 :
+                    updateFlight(flights,input);
                     break;
                 case 3 :
                     removeFlight(input,flights);
@@ -53,7 +54,7 @@ public class Admin {
         {
             System.out.println("This flightId already EXIST");
             System.out.println("Try again");
-            System.out.printf(">>");
+            System.out.print(">>");
             flightId = input.next();
         }
         index = findNullFlightIndex(flights);
@@ -87,8 +88,8 @@ public class Admin {
     }
     private boolean findExistFlighId(Flight[] flights,String flightId)
     {
-        for (int i = 0; i < flights.length; i++) {
-            if (flights[i] != null && flights[i].getFlightId() != null && flights[i].getFlightId().equals(flightId))
+        for (Flight flight : flights) {
+            if (flight != null && flight.getFlightId() != null && flight.getFlightId().equals(flightId))
                 return true;
 
         }
@@ -96,13 +97,13 @@ public class Admin {
     }
     private void removeFlight(Scanner input,Flight[] flights)
     {
-        System.out.printf("Enter flightId : ");
+        System.out.print("Enter flightId : ");
         String flightId = input.next();
         while (!findExistFlighId(flights,flightId))
         {
             System.out.println("This flightId is INCORRECT!");
             System.out.println("Try again ");
-            System.out.printf("Enter flightId : ");
+            System.out.print("Enter flightId : ");
             flightId = input.next();
         }
         int index = findFlightIdIndex(flights,flightId);
