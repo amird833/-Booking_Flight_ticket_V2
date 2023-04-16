@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class User {
     private String username;
     private String password;
@@ -33,5 +35,11 @@ public class User {
 
     public void setVault(int vault) {
         this.vault = vault;
+    }
+    public void addCharge(Scanner input)
+    {
+        System.out.printf("You have %d",vault);
+        System.out.printf("Add ");
+        vault += input.nextInt();
     }
 }

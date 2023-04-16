@@ -25,6 +25,7 @@ public class Other {
                     ticketAction.printTicket(user,flights,flightAction);
                     break;
                 case 6:
+                    user.addCharge(input);
                     break;
                 case 0:
                     exitFlag = 1;
