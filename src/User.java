@@ -39,7 +39,7 @@ public class User {
     public void addCharge(Scanner input)
     {
         System.out.printf("You have %d",vault);
-        System.out.printf("Add ");
+        System.out.print("Add ");
         vault += input.nextInt();
     }
 }

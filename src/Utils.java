@@ -10,7 +10,6 @@ public class Utils {
     FlightAction flightAction = new FlightAction();
     Flight[] flights = new Flight[SIZE];
     Admin admin = new Admin();
-    Ticket[] tickets = new Ticket[SIZE*10];
     Random random = new Random();
     TicketAction ticketAction = new TicketAction();
     public void start()
