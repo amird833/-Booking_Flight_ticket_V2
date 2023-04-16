@@ -73,9 +73,10 @@ public class TicketAction {
     private boolean findTicketId(User[] users , String ticketId)
     {
         for (int i = 0; i < users.length; i++) {
-            for (int j = 0; j < users[i].tickets.length; j++) {
-                if (users[i].tickets[j] != null && users[i].tickets[j].getTicketId().equals(ticketId))
-                    return true;
+            if (users[i]!= null)
+                for (int j = 0; j < users[i].tickets.length; j++) {
+                    if ( users[i].tickets[j] != null && users[i].tickets[j].getTicketId()!=null && users[i].tickets[j].getTicketId().equals(ticketId))
+                        return true;
             }
         }
         return false;
@@ -135,7 +136,7 @@ public class TicketAction {
                 for (int j = 0; j < flights.length; j++) {
                     if (flights[j] != null && flights[j].getFlightId()!= null && flights[j].getFlightId().equals(user.tickets[i].getFlightId()))
                     {
-                        System.out.printf("%-10d       | %-10s       | %-10s       | %-10s       | %-10s       | %-10s       | %-,10d       | %-3d\n",user.tickets[i].getTicketId() ,flights[j].getFlightId(), flights[j].getOrigin(), flights[j].getDestination(), flights[j].getDate(), flights[j].getTime(), flights[j].getPrice(), 1);
+                        System.out.printf("%-10s       | %-10s       | %-10s       | %-10s       | %-10s       | %-10s       | %-,10d       | %-3d\n",user.tickets[i].getTicketId() ,flights[j].getFlightId(), flights[j].getOrigin(), flights[j].getDestination(), flights[j].getDate(), flights[j].getTime(), flights[j].getPrice(), 1);
 
                     }
                 }
