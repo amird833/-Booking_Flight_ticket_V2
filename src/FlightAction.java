@@ -74,7 +74,10 @@ public class FlightAction {
             if (flights[i]!=null && flights[i].getFlightId() != null && flights[i].getFlightId().equals(flightId))
                 return i;
         }
-        return 0;
+
+        throw new IllegalArgumentException();
+
+
     }
     public void updateFlight(Flight[] flights , Scanner input , Admin admin)
     {
