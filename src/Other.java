@@ -30,6 +30,13 @@ public class Other {
             }
         }
     }
+    private void cancellation(Ticket[] tickets , User user , Scanner input)
+    {
+        String ticketId;
+        System.out.printf("Enter ticketId : ");
+        ticketId = input.next();
+
+    }
     private int otherMenu(Scanner input)
     {
         int chose;
