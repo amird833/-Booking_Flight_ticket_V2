@@ -16,7 +16,6 @@ public class Other {
                     flightAction.filterFlight(flights,input);
                     break;
                 case 3:
-                    bookingTicket(random , tickets , user , input , flights ,flightAction );
                     break;
                 case 4:
                     break;
@@ -30,13 +29,7 @@ public class Other {
             }
         }
     }
-    private void cancellation(Ticket[] tickets , User user , Scanner input)
-    {
-        String ticketId;
-        System.out.printf("Enter ticketId : ");
-        ticketId = input.next();
-/////////////////////////////////////////////////////////////////////////////
-    }
+
     private int otherMenu(Scanner input)
     {
         int chose;
@@ -58,44 +51,7 @@ public class Other {
         }
         return chose;
     }
-    private void bookingTicket(Random random ,Ticket[] tickets , User user, Scanner input , Flight[] flights , FlightAction flightAction)
-    {
-        String flightId;
-        int indexFlight;
-        int indexTicket;
-        System.out.print("Enter flightId : ");
-        flightId = input.next();
-        while (!flightAction.findExistFlightId(flights,flightId))
-        {
-            System.out.println("Cant find this flightId :(");
-            System.out.println("Try again");
-            System.out.printf("Enter flightId : ");
-            flightId = input.next();
-        }
-        indexFlight = flightAction.findFlightIdIndex(flights,flightId);
-        if (flights[indexFlight].getSeats() ==0)
-        {
-            System.out.println("This flight dont have any seats");
-        }
-        else if (flights[indexFlight].getPrice() > user.getVault())
-        {
-            System.out.println("You dont have enugh many :(");
-        }
-        else
-        {
-            indexTicket = tickets[0].findNullTicket(tickets);
-            tickets[indexTicket].setTicketId(random , tickets);
-            tickets[indexTicket].setFlightId(flights[indexFlight].getFlightId());
-            tickets[indexTicket].setOrigin(flights[indexFlight].getOrigin());
-            tickets[indexTicket].setDestination(flights[indexFlight].getDestination());
-            tickets[indexTicket].setDate(flights[indexFlight].getDate());
-            tickets[indexTicket].setPrice(flights[indexFlight].getPrice());
-            tickets[indexTicket].setTime(flights[indexFlight].getTime());
-            tickets[indexTicket].setUsername(user.getUsername());
-            user.setVault(user.getVault() - flights[indexFlight].getPrice());
-            flights[indexFlight].setSeats(flights[indexFlight].getSeats()-1);
-        }
-    }
+
 
     private void changeUserPassword(User user,Scanner input)
     {
