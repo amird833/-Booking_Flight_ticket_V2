@@ -115,7 +115,7 @@ public class Sign {
         else if (userName.equals("admin")||userName.equals("ADMIN")||userName.equals("Admin"))
             return true;
         for (User user : users) {
-            if (user.getUsername() != null && user.getUsername().equals(userName))
+            if ( user!=null&& user.getUsername() != null && user.getUsername().equals(userName))
                 return true;
         }
         return false;

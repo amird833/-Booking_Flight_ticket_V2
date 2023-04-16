@@ -73,9 +73,10 @@ public class TicketAction {
     private boolean findTicketId(User[] users , String ticketId)
     {
         for (User user : users) {
-            for (int j = 0; j < user.tickets.length; j++) {
-                if (users[j]!= null && user.tickets[j] != null &&user.tickets[j].getTicketId()!= null && user.tickets[j].getTicketId().equals(ticketId))
-                    return true;
+            if (user != null)
+                for (int j = 0; j < user.tickets.length; j++) {
+                    if (user.tickets[j] != null &&user.tickets[j].getTicketId()!= null && user.tickets[j].getTicketId().equals(ticketId))
+                        return true;
             }
         }
         return false;
@@ -134,7 +135,7 @@ public class TicketAction {
             {
                 for (Flight flight : flights) {
                     if (flight != null && flight.getFlightId() != null && flight.getFlightId().equals(user.tickets[i].getFlightId())) {
-                        System.out.printf("%-10d       | %-10s       | %-10s       | %-10s       | %-10s       | %-10s       | %-,10d       | %-3d\n", user.tickets[i].getTicketId(), flight.getFlightId(), flight.getOrigin(), flight.getDestination(), flight.getDate(), flight.getTime(), flight.getPrice(), 1);
+                        System.out.printf("%-10s       | %-10s       | %-10s       | %-10s       | %-10s       | %-10s       | %-,10d       | 1\n", user.tickets[i].getTicketId(), flight.getFlightId(), flight.getOrigin(), flight.getDestination(), flight.getDate(), flight.getTime(), flight.getPrice());
 
                     }
                 }
