@@ -107,7 +107,7 @@ public class TicketAction {
     }
     public void cancellationTicket(User user , Scanner input , Flight[] flights , FlightAction flightAction)
     {
-        printTiket(user , flights , flightAction);
+        printTicket(user , flights , flightAction);
         String ticketId;
         System.out.print("Enter ticketId : ");
         ticketId = input.next();
@@ -127,7 +127,7 @@ public class TicketAction {
 
 
     }
-    private void printTiket(User user , Flight[] flights , FlightAction flightAction)
+    public void printTicket(User user , Flight[] flights , FlightAction flightAction)
     {
         for (int i = 0; i < user.tickets.length; i++) {
             if (user.tickets[i] != null)
@@ -142,5 +142,6 @@ public class TicketAction {
             }
         }
     }
+
 
 }

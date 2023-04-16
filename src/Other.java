@@ -22,6 +22,7 @@ public class Other {
                     ticketAction.cancellationTicket(user,input,flights,flightAction);
                     break;
                 case 5:
+                    ticketAction.printTicket(user,flights,flightAction);
                     break;
                 case 6:
                     break;
