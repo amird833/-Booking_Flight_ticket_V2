@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Other {
-    public void otherAction(Scanner input , Flight[] flights , User user,Random random , Ticket[] tickets , Admin admin)
+    public void otherAction(Scanner input , Flight[] flights , User user,Random random , Ticket[] tickets , FlightAction flightAction)
     {
         int exitFlag =0 ;
         while (exitFlag == 0)
@@ -16,7 +16,7 @@ public class Other {
                     filterFlight(flights,input);
                     break;
                 case 3:
-                    bookingTicket(random , tickets , user , input , flights , admin);
+                    bookingTicket(random , tickets , user , input , flights ,flightAction );
                     break;
                 case 4:
                     break;
@@ -58,21 +58,21 @@ public class Other {
         }
         return chose;
     }
-    private void bookingTicket(Random random ,Ticket[] tickets , User user, Scanner input , Flight[] flights , Admin admin)
+    private void bookingTicket(Random random ,Ticket[] tickets , User user, Scanner input , Flight[] flights , FlightAction flightAction)
     {
         String flightId;
         int indexFlight;
         int indexTicket;
         System.out.print("Enter flightId : ");
         flightId = input.next();
-        while (!admin.findExistFlightId(flights,flightId))
+        while (!flightAction.findExistFlightId(flights,flightId))
         {
             System.out.println("Cant find this flightId :(");
             System.out.println("Try again");
             System.out.printf("Enter flightId : ");
             flightId = input.next();
         }
-        indexFlight = admin.findFlightIdIndex(flights,flightId);
+        indexFlight = flightAction.findFlightIdIndex(flights,flightId);
         if (flights[indexFlight].getSeats() ==0)
         {
             System.out.println("This flight dont have any seats");
