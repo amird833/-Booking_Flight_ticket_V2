@@ -57,7 +57,7 @@ public class Sign {
         }
         return 0;
     }
-    public void signInGet(Scanner input , User[] users, Admin admin, Flight[] flights , Other other , Random random , Ticket[] tickets , FlightAction flightAction)
+    public void signInGet(Scanner input , User[] users, Admin admin, Flight[] flights , Other other , Random random , TicketAction ticketAction , FlightAction flightAction)
     {
         String username;
         String password;
@@ -97,7 +97,7 @@ public class Sign {
                 password = input.next();
             }
             System.out.printf("Welcome %s",users[index].getUsername());
-            other.otherAction(input,flights,users[index],random , tickets , flightAction);
+            other.otherAction(input,flights,users[index],random , ticketAction , flightAction,users);
         }
     }
     private boolean checkAdminUsername(String userName )

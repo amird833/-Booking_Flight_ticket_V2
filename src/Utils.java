@@ -12,13 +12,14 @@ public class Utils {
     Admin admin = new Admin();
     Ticket[] tickets = new Ticket[SIZE*10];
     Random random = new Random();
+    TicketAction ticketAction = new TicketAction();
     public void start()
     {
         flightAction.addDefultFlight(flights);
         while (true)
         {
             switch (sign.welcomeMenu(input)) {
-                case 1 -> sign.signInGet(input,users,admin,flights,other,random , tickets ,flightAction);
+                case 1 -> sign.signInGet(input,users,admin,flights,other,random , ticketAction ,flightAction);
                 case 2 -> sign.signUpUser(input,users);
             }
         }

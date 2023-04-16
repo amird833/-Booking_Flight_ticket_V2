@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Other {
-    public void otherAction(Scanner input , Flight[] flights , User user,Random random , Ticket[] tickets , FlightAction flightAction)
+    public void otherAction(Scanner input , Flight[] flights , User user,Random random , TicketAction ticketAction , FlightAction flightAction , User[] users)
     {
         int exitFlag =0 ;
         while (exitFlag == 0)
@@ -16,6 +16,7 @@ public class Other {
                     flightAction.filterFlight(flights,input);
                     break;
                 case 3:
+                    ticketAction.bookingTicket(user,input,flightAction,flights,users,random);
                     break;
                 case 4:
                     break;
