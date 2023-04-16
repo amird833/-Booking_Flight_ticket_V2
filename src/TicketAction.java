@@ -80,6 +80,14 @@ public class TicketAction {
         }
         return false;
     }
+    private boolean findTicketId(User user , String ticketId)
+    {
+        for (int i = 0; i < user.tickets.length; i++) {
+            if(user.tickets[i] != null && user.tickets[i].getTicketId().equals(ticketId))
+                return true;
+        }
+        return false;
+    }
     private void setTicket(User user , Flight flight ,User[] users , Random random )
     {
         int indexTicket;
@@ -88,6 +96,51 @@ public class TicketAction {
         user.tickets[indexTicket].setFlightId(flight.getFlightId());
         user.setVault(user.getVault()-flight.getPrice());
         flight.setSeats(flight.getSeats() - 1);
+    }
+    private int findIndexTicket(String ticketId , User user)
+    {
+        for (int i = 0; i < user.tickets.length; i++) {
+            if (user.tickets[i]!= null && user.tickets[i].getTicketId().equals(ticketId))
+                return i;
+        }
+        return 0;
+    }
+    public void cancellationTicket(User user , Scanner input , Flight[] flights , FlightAction flightAction)
+    {
+        printTiket(user , flights , flightAction);
+        String ticketId;
+        System.out.print("Enter ticketId : ");
+        ticketId = input.next();
+        while(!findTicketId(user , ticketId))
+        {
+            System.out.println("Cant find this ticketId :(");
+            System.out.println("Try again");
+            System.out.printf(">>");
+            ticketId = input.next();
+        }
+        int indexTicket = findIndexTicket(ticketId,user);
+        int indexFlight = flightAction.findFlightIdIndex(flights,user.tickets[indexTicket].getFlightId());
+        user.setVault(user.getVault()+flights[indexFlight].getPrice());
+        flights[indexFlight].setSeats(flights[indexFlight].getSeats()+1);
+        user.tickets[indexTicket] = null;
+        System.out.println("Cancelling is Successfully :)");
+
+
+    }
+    private void printTiket(User user , Flight[] flights , FlightAction flightAction)
+    {
+        for (int i = 0; i < user.tickets.length; i++) {
+            if (user.tickets[i] != null)
+            {
+                for (int j = 0; j < flights.length; j++) {
+                    if (flights[j] != null && flights[j].getFlightId()!= null && flights[j].getFlightId().equals(user.tickets[i].getFlightId()))
+                    {
+                        System.out.printf("%-10d       | %-10s       | %-10s       | %-10s       | %-10s       | %-10s       | %-,10d       | %-3d\n",user.tickets[i].getTicketId() ,flights[j].getFlightId(), flights[j].getOrigin(), flights[j].getDestination(), flights[j].getDate(), flights[j].getTime(), flights[j].getPrice(), 1);
+
+                    }
+                }
+            }
+        }
     }
 
 }

@@ -19,6 +19,7 @@ public class Other {
                     ticketAction.bookingTicket(user,input,flightAction,flights,users,random);
                     break;
                 case 4:
+                    ticketAction.cancellationTicket(user,input,flights,flightAction);
                     break;
                 case 5:
                     break;
