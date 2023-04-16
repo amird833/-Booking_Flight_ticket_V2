@@ -2,7 +2,7 @@ public class User {
     private String username;
     private String password;
     private int vault;
-
+    public Ticket[] tickets = new Ticket[10];
 
 
 
