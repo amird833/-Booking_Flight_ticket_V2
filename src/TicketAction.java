@@ -74,7 +74,7 @@ public class TicketAction {
     {
         for (User user : users) {
             for (int j = 0; j < user.tickets.length; j++) {
-                if (user.tickets[j] != null &&user.tickets[j].getTicketId()!= null && user.tickets[j].getTicketId().equals(ticketId))
+                if (users[j]!= null && user.tickets[j] != null &&user.tickets[j].getTicketId()!= null && user.tickets[j].getTicketId().equals(ticketId))
                     return true;
             }
         }
