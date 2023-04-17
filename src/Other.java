@@ -12,7 +12,7 @@ public class Other {
                 case 2 -> flightAction.filterFlight(flights, input);
                 case 3 -> ticketAction.bookingTicket(user, input, flightAction, flights, users, random);
                 case 4 -> ticketAction.cancellationTicket(user, input, flights, flightAction);
-                case 5 -> ticketAction.printTicket(user, flights,flightAction);
+                case 5 -> ticketAction.printTicket(user, flights);
                 case 6 -> user.addCharge(input);
                 case 0 -> exitFlag = 1;
             }
