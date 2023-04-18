@@ -2,6 +2,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Sign {
+    /**
+     * @param input For get input from user
+     * @return Print Sign in and Sign up and get chose 1 or 2
+     * if input another number , you get try again massege
+     * if you input another type , you get ERORE
+     */
     public  int welcomeMenu(Scanner input)
     {
         int chose;
@@ -11,7 +17,7 @@ public class Sign {
         System.out.println(":                 < 1 > Sign in                 :");
         System.out.println(":                 < 2 > Sign up                 :");
         System.out.println(":...............................................:");
-          System.out.print(">>");
+        System.out.print(">>");
         chose = input.nextInt();
         while (chose > 2 || chose <1)
         {
