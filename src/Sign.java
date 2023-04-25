@@ -16,7 +16,7 @@ public class Sign {
         System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::::");
         System.out.println(":                 < 1 > Sign in                 :");
         System.out.println(":                 < 2 > Sign up                 :");
-        System.out.println(":...............................................:");
+        System.out.println(":...........................................:");
         System.out.print(">>");
         chose = input.nextInt();
         while (chose > 2 || chose <1)
